@@ -120,7 +120,7 @@ a[x-apple-data-detectors] {
   <div style="box-sizing: border-box; line-height: 1.5; font-size: 1.25rem !important;">
     {{paymentSystemName}}
     {{#if lastDigits}} last digits {{lastDigits}} {{/if}}
-    <br/>$ {{formatCurrency value}}
+    <br/>$ {{formatUSDCurrency value}}
     {{#eq installments 1}}
       at sight
     {{else}}
@@ -143,7 +143,7 @@ a[x-apple-data-detectors] {
         in {{installments}}x
       {{/eq}}
     </td>
-    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 1rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">$ {{formatCurrency value}}</td>
+    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 1rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">$ {{formatUSDCurrency value}}</td>
   </tr>
   {{/each}}
 </table>
@@ -170,7 +170,7 @@ a[x-apple-data-detectors] {
   <div style="box-sizing: border-box; line-height: 1.5; font-size: 1.25rem !important;">
     {{paymentSystemName}}
     {{#if lastDigits}} last digits {{lastDigits}} {{/if}}
-    <br/>$ {{formatCurrency value}}
+    <br/>$ {{formatUSDCurrency value}}
     {{#eq installments 1}}
       at sight
     {{else}}
@@ -193,7 +193,7 @@ a[x-apple-data-detectors] {
         in {{installments}}x
       {{/eq}}
     </td>
-    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 1rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">$ {{formatCurrency value}}</td>
+    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 1rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">$ {{formatUSDCurrency value}}</td>
   </tr>
   {{/each}}
 </table>
@@ -215,14 +215,14 @@ a[x-apple-data-detectors] {
           {{#eq id "Discounts"}}Discounts{{/eq}}
           {{#eq id "Tax"}}Taxes{{/eq}}
         </td>
-        <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; text-align: right !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">$ {{formatCurrency value}}</td>
+        <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; text-align: right !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">$ {{formatUSDCurrency value}}</td>
       </tr>
       {{/if}}
     {{/each}}
     {{#if value}}
       <tr style="box-sizing: border-box !important;">
         <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; font-weight: 500; padding-top: .25rem; padding-bottom: .25rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">Total</td>
-        <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; font-weight: 500; padding-top: .25rem; padding-bottom: .25rem; text-align: right !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">$ {{formatCurrency value}}</td>
+        <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; font-weight: 500; padding-top: .25rem; padding-bottom: .25rem; text-align: right !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">$ {{formatUSDCurrency value}}</td>
       </tr>
     {{/if}}
   </table>
@@ -295,7 +295,7 @@ a[x-apple-data-detectors] {
       {{/compare}}
 
       {{#if deliveryWindow}}
-{{formatDate deliveryWindow.startDateUtc}}
+{{formatUSDate deliveryWindow.startDateUtc}}
 between
 {{formatTime deliveryWindow.startDateUtc}}
 and
@@ -353,7 +353,7 @@ and
   Up To
 {{/eq}}
 
-{{formatDate shippingEstimateDate}}
+{{formatUSDate shippingEstimateDate}}
         {{/unless}}
       {{/if}}
     </div>
@@ -374,7 +374,7 @@ and
             <div style="box-sizing: border-box; color: #777 !important;">
               {{quantity}} un.
               {{#if sellingPrice}}
-                $ {{formatCurrency sellingPrice}}
+                $ {{formatUSDCurrency sellingPrice}}
               {{else}}
                 Free
               {{/if}}
@@ -390,7 +390,7 @@ and
                 <div style="box-sizing: border-box; color: #777 !important;">
                   {{quantity}} un.
                   {{#if price}}
-                    $ {{formatCurrency price}}
+                    $ {{formatUSDCurrency price}}
                   {{else}}
                     Free
                   {{/if}}

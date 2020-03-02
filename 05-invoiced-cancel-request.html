@@ -154,7 +154,7 @@ a[x-apple-data-detectors] {
             <div style="box-sizing: border-box; color: #777 !important;">
               {{quantity}} un.
               {{#if sellingPrice}}
-                $ {{formatCurrency sellingPrice}}
+                $ {{formatUSDCurrency sellingPrice}}
               {{else}}
                 Free
               {{/if}}
@@ -170,7 +170,7 @@ a[x-apple-data-detectors] {
                 <div style="box-sizing: border-box; color: #777 !important;">
                   {{quantity}} un.
                   {{#if price}}
-                    $ {{formatCurrency price}}
+                    $ {{formatUSDCurrency price}}
                   {{else}}
                     Free
                   {{/if}}

@@ -273,7 +273,7 @@ a[x-apple-data-detectors] {
             <div style="box-sizing: border-box; color: #777 !important;">
               {{quantity}} un.
               {{#if sellingPrice}}
-                $ {{formatCurrency sellingPrice}}
+                $ {{formatUSDCurrency sellingPrice}}
               {{else}}
                 Free
               {{/if}}
@@ -289,7 +289,7 @@ a[x-apple-data-detectors] {
                 <div style="box-sizing: border-box; color: #777 !important;">
                   {{quantity}} un.
                   {{#if price}}
-                    $ {{formatCurrency price}}
+                    $ {{formatUSDCurrency price}}
                   {{else}}
                     Free
                   {{/if}}
@@ -316,7 +316,7 @@ a[x-apple-data-detectors] {
       {{/compare}}
 
       {{#if deliveryWindow}}
-{{formatDate deliveryWindow.startDateUtc}}
+{{formatUSDate deliveryWindow.startDateUtc}}
 between
 {{formatTime deliveryWindow.startDateUtc}}
 and
@@ -374,7 +374,7 @@ and
   Up To
 {{/eq}}
 
-{{formatDate shippingEstimateDate}}
+{{formatUSDate shippingEstimateDate}}
         {{/unless}}
       {{/if}}
     </div>
@@ -395,7 +395,7 @@ and
             <div style="box-sizing: border-box; color: #777 !important;">
               {{quantity}} un.
               {{#if sellingPrice}}
-                $ {{formatCurrency sellingPrice}}
+                $ {{formatUSDCurrency sellingPrice}}
               {{else}}
                 Free
               {{/if}}
@@ -411,7 +411,7 @@ and
                 <div style="box-sizing: border-box; color: #777 !important;">
                   {{quantity}} un.
                   {{#if price}}
-                    $ {{formatCurrency price}}
+                    $ {{formatUSDCurrency price}}
                   {{else}}
                     Free
                   {{/if}}
