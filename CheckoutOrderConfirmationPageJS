@@ -1,0 +1,32 @@
+var _elementFound = false;
+$(document).bind("DOMSubtreeModified", function() {
+    if (_elementFound)
+    {
+  	  return;
+    }
+ 
+  if ($(".cconf-summary").length > 0) {
+    _elementFound = true;
+
+    let totalCustomTaxes = 0;
+    let totalDiv = null
+    $('.cconf-summary .cf.w-100').each(function () {
+      var $this = $(this);
+      if ($this.text().includes('TAX$')) {
+        $this.hide();
+        let startPosition = $this.text().indexOf('$') + 1
+        let value = Number($this.text().substr(startPosition), 10)
+        console.log(value)
+        totalCustomTaxes += value
+      }
+      if ($this.text().includes('Total$')) {
+        totalDiv = $this
+      }
+    });
+    console.log(totalCustomTaxes.toFixed(2))
+    console.log(totalDiv)
+    let totalCustomTaxesDiv = "<div class=\"cf w-100\"><div class=\"dib f6 fw4 gray w-60\"><span>Tax</span></div><div class=\"dib f6 fw4 gray w-40 tr\"><span>$"+totalCustomTaxes.toFixed(2)+"</span></div><hr class=\"bt-0 bb b--light-gray w-100 mb1 mt1\"></div>"
+    $(totalCustomTaxesDiv).insertBefore(totalDiv);
+     
+  }
+});
